@@ -2,43 +2,44 @@ export default {
   sidebarLinks: [
     {
       title: 'Classes',
-      icon: 'heart',
+      icon: 'school',
       link: { name: 'TeacherClassesPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Invigilation',
+      icon: 'school',
+      link: { name: 'TeacherInvigilationPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Question Setting',
+      icon: 'school',
+      link: { name: 'TeacherQuestionSettingPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Examining Scripts',
+      icon: 'school',
+      link: { name: 'TeacherExaminingScriptsPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Scrutinizing Scripts',
+      icon: 'school',
+      link: { name: 'TeacherScrutinizingScriptsPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Advisor\'s Corner',
+      icon: 'school',
+      link: { name: 'TeacherAdvisorPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Head of Dept Corner',
+      icon: 'school',
+      link: { name: 'TeacherHeadOfDeptPage' }
     },
     {
-      title: '',
-      icon: '',
-      link: { name: '' }
+      title: 'Provost Corner',
+      icon: 'school',
+      link: { name: 'TeacherProvostPage' }
     },
-  ]
+  ],
+  user: null,
 }

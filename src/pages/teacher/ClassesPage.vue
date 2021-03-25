@@ -12,10 +12,12 @@
       <h4 style="margin-bottom: 0.5em">My Courses</h4>
       <q-table
         :columns="courseColumns"
-        :data="courseData"
+        :data="courseData.slice(0, rowsPerPage)"
         hide-bottom
         row-key="name"
+        :pagination="{ rowsPerPage: 100 }"
       />
+      <q-btn class="q-my-md" color="primary" @click="rowsPerPage += 5">Load More</q-btn>
     </div>
   </q-page>
 </template>
@@ -26,7 +28,7 @@ export default {
   data() {
     return {
       routineColumns: [
-        { name: 'weekday', label: 'Weekday', field: 'weekday', align: 'center' },
+        { name: 'weekday', label: 'Weekday', field: 'weekday', align: 'center', style: 'font-weight: bold' },
         { name: 'f8t9', label: '8:00-9:00', field: 'f8t9', align: 'center' },
         { name: 'f9t10', label: '9:00-10:00', field: 'f9t10', align: 'center' },
         { name: 'f10t11', label: '10:00-11:00', field: 'f10t11', align: 'center' },
@@ -51,14 +53,28 @@ export default {
           f10t11: 'Bio'
         },
       ],
+      rowsPerPage: 5,
       courseColumns: [
-        { name: 'course', label: 'Course', field: 'course', align: 'left', style: 'width: 75%;'},
-        { name: 'session', label: 'Session', field: 'session', align: 'right' }
+        { name: 'course', label: 'Course', field: 'course', align: 'left', style: 'width: 75%; font-size: 1em' },
+        { name: 'session', label: 'Session', field: 'session', align: 'right', style: 'font-size: 1em' }
       ],
       courseData: [
         { course: 'Graphics', session: '2020-21' },
         { course: 'HCI', session: '2020-21' },
         { course: 'Graph', session: '2018-19' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
+        { course: 'Security', session: '2019-20' },
         { course: 'Security', session: '2019-20' },
       ]
     }
