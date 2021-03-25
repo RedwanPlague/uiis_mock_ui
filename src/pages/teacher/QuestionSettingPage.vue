@@ -5,11 +5,11 @@
       <q-markup-table>
         <thead>
           <tr>
-            <th class="text-left" style="font-size: 1.2em; width: 50%">Course</th>
-            <th style="font-size: 1.2em">Session</th>
-            <th style="font-size: 1.2em">Type</th>
-            <th style="font-size: 1.2em">File</th>
-            <th style="font-size: 1.2em" class="text-right"><span class="q-pr-md">Submit</span></th>
+            <th class="text-left" style="font-size: 1.2em;">Course</th>
+            <th style="font-size: 1.2em; width: 10%">Deadline</th>
+            <th style="font-size: 1.2em; width: 10%">Type</th>
+            <th style="font-size: 1.2em; width: 15%">File</th>
+            <th style="font-size: 1.2em; width: 10%" class="text-right"><span class="q-pr-md">Submit</span></th>
           </tr>
         </thead>
         <tbody>
@@ -44,7 +44,6 @@
         <thead>
         <tr>
           <th class="text-left" style="font-size: 1.2em; width: 50%">Course</th>
-          <th style="font-size: 1.2em">Session</th>
           <th style="font-size: 1.2em">Type</th>
           <th style="font-size: 1.2em">File</th>
           <th style="font-size: 1.2em" class="text-right"><span class="q-pr-md">Date</span></th>
@@ -53,14 +52,9 @@
         <tbody>
         <tr v-for="(question, i) in submitted" :key="i" class="text-center">
           <td class="text-left" style="font-size: 1.1em">{{question.course}}</td>
-          <td style="font-size: 1.1em">{{question.session}}</td>
           <td style="font-size: 1.1em">{{question.type}}</td>
           <td>
-            <q-file v-model="question.file">
-              <template v-slot:prepend>
-                <q-icon name="attach_file"/>
-              </template>
-            </q-file>
+            <q-file v-model="question.file"></q-file>
           </td>
           <td class="text-right" style="font-size: 1.1em">
             8th May, 12:38 AM
@@ -80,7 +74,7 @@ export default {
       questions: [
         {
           course: 'Graphics',
-          session: '2017-18',
+          session: '8th April, 9:00 AM',
           type: 'CT (20 marks)',
           file: null
         },
