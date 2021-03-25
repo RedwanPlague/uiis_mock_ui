@@ -3,6 +3,7 @@
     <q-header elevated >
       <q-toolbar>
         <q-btn
+          :disable="!user"
           flat
           dense
           round
@@ -15,7 +16,7 @@
           Teachers' UIIS
         </q-toolbar-title>
 
-        <q-btn-dropdown v-if="Boolean(user)" icon="person" :label="user" flat>
+        <q-btn-dropdown v-if="user" icon="person" :label="user" flat>
           <q-list>
             <q-item clickable v-close-popup :to="{ name: 'TeacherInvigilationPage' }" style="color: inherit">
               <q-item-section>
