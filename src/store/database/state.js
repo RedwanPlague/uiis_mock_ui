@@ -40,6 +40,11 @@ export default {
       icon: 'school',
       link: { name: 'TeacherProvostPage' }
     },
+    {
+      title: 'Feedback',
+      icon: 'school',
+      link: { name: 'TeacherFeedbackPage' }
+    },
   ],
   user: null,
 }
