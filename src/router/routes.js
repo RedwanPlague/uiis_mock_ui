@@ -10,6 +10,7 @@ const routes = [
       { path: 'question-setting', name: 'TeacherQuestionSettingPage', component: () => import('pages/teacher/QuestionSettingPage.vue') },
       { path: 'examining-scripts', name: 'TeacherExaminingScriptsPage', component: () => import('pages/teacher/ExaminingScriptsPage.vue') },
       { path: 'scrutinizing-scripts', name: 'TeacherScrutinizingScriptsPage', component: () => import('pages/teacher/ScrutinizingScriptsPage.vue') },
+      { path: 'supervisor', name: 'TeacherSupervisorPage', component: () => import('pages/teacher/SupervisorPage.vue') },
       { path: 'advisor-corner', name: 'TeacherAdvisorPage', component: () => import('pages/teacher/AdvisorPage.vue') },
       { path: 'head-corner', name: 'TeacherHeadOfDeptPage', component: () => import('pages/teacher/HeadOfDeptPage.vue') },
       { path: 'provost-corner', name: 'TeacherProvostPage', component: () => import('pages/teacher/ProvostPage.vue') },

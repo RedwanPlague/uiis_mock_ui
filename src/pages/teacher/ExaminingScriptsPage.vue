@@ -7,7 +7,7 @@
           <q-markup-table>
             <thead>
             <tr>
-              <th class="text-left" style="font-size: 1.1em">Script Id</th>
+              <th class="text-left" style="font-size: 1.1em">Script</th>
               <th style="width: 20%; font-size: 1.1em">Marks</th>
               <th style="font-size: 1.1em">Save</th>
               <th style="font-size: 1.1em">Scrutinized Result</th>
@@ -15,7 +15,11 @@
             </thead>
             <tbody>
             <tr v-for="i in 15" :key="i">
-              <td class="text-left">{{i+1605000}}</td>
+              <td class="text-left">
+                <a href="/files/script.pdf" download>
+                  {{i+1605000}}
+                </a>
+              </td>
               <td class="text-center"><q-input v-model="marks[i-1]" type="number" class="absolute-center q-pb-sm"></q-input></td>
               <td class="text-center">
                 <q-btn label="save" flat color="green"></q-btn>
@@ -26,7 +30,12 @@
               <td></td>
               <td></td>
               <td class="text-center">
-                <q-btn label="Done" color="green" unelevated @click="isOpen1 = !isOpen1"></q-btn>
+                <q-btn
+                  label="Done"
+                  color="green"
+                  unelevated
+                  @click="isOpen1 = !isOpen1; addBadge(4);"
+                ></q-btn>
               </td>
               <td></td>
             </tr>
@@ -37,7 +46,7 @@
           <q-markup-table>
             <thead>
             <tr>
-              <th class="text-left" style="font-size: 1.1em">Script Id</th>
+              <th class="text-left" style="font-size: 1.1em">Script</th>
               <th style="width: 20%; font-size: 1.1em">Marks</th>
               <th style="font-size: 1.1em">Save</th>
               <th style="font-size: 1.1em">Scrutinized Result</th>
@@ -85,6 +94,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'ExaminingScriptsPage',
   data () {
@@ -97,6 +108,11 @@ export default {
       isOpen1: false,
       isOpen2: false,
     }
+  },
+  methods: {
+    ...mapActions([
+      'addBadge'
+    ])
   }
 }
 </script>

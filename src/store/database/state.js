@@ -26,6 +26,11 @@ export default {
       link: { name: 'TeacherScrutinizingScriptsPage' }
     },
     {
+      title: 'Supervisor\'s Corner',
+      icon: 'school',
+      link: { name: 'TeacherSupervisorPage' }
+    },
+    {
       title: 'Advisor\'s Corner',
       icon: 'school',
       link: { name: 'TeacherAdvisorPage' }
@@ -46,5 +51,5 @@ export default {
       link: { name: 'TeacherFeedbackPage' }
     },
   ],
-  user: null,
+  user: 'Super Teacher',
 }

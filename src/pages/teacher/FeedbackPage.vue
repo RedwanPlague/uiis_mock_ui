@@ -36,6 +36,7 @@ export default {
     onSubmit() {
       this.subject = ''
       this.feedbackText = ''
+      this.anonymity = 'Anonymous'
     }
   }
 }
