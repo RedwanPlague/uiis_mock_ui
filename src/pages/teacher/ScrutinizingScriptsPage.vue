@@ -52,7 +52,7 @@ export default {
   data () {
     return {
       courses: [
-        'CSE301: Security (Term Final)',
+        'CSE405: Computer Security (Term Final)',
       ],
       comments: [null, null, null, null, null],
       isOpen1: true,

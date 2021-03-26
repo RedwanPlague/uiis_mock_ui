@@ -232,24 +232,24 @@ export default {
           stdId: 1605003
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Redwanul Haque',
+          stdId: 1605004
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Rakibul Hasan Sarkar',
+          stdId: 1605010
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Ajmain Yasar Sahil',
+          stdId: 1605023
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Zawad Abdullah',
+          stdId: 1605002
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Mahir Shahriyar Sezan',
+          stdId: 1605024
         },
       ],
       specialCare: [
@@ -258,8 +258,8 @@ export default {
           stdId: 1605003
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Rakibul Hasan Sarkar',
+          stdId: 1605010
         },
       ],
       pendings: [
@@ -268,25 +268,29 @@ export default {
           stdId: 1605003
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Redwanul Haque',
+          stdId: 1605004
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Rakibul Hasan Sarkar',
+          stdId: 1605010
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Ajmain Yasar Sahil',
+          stdId: 1605023
+        },
+        {
+          name: 'Md. Zawad Abdullah',
+          stdId: 1605002
         },
       ],
       dialogOpen: false,
       dialogOpen2: false,
       registration: [
         { name: 'CSE463: Introduction to Bioinformatics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE409-Computer Graphics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE405-Computer Security', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'HUM475-Engineering Economics', credit: 3.00, offeredIn: 'L4-T1' },
       ],
       addDrops: [
         {
@@ -294,8 +298,8 @@ export default {
           stdId: 1605003
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Zawad Abdullah',
+          stdId: 1605002
         },
       ],
       drop: [

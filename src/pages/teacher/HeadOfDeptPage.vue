@@ -186,7 +186,7 @@ export default {
       advisees: [
         {
           name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          stdId: 1605004
         },
         {
           name: 'Bishwajit Bhattacharjee',
@@ -226,24 +226,37 @@ export default {
           type: 'Dean\'s List'
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Redwanul Haque',
+          stdId: 1605004,
+          type: 'Dean\'s List'
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Rakibul Hasan Sarkar',
+          stdId: 1605010,
+          type: 'Technical'
         },
         {
-          name: 'Bishwajit Bhattacharjee',
-          stdId: 1605003
+          name: 'Md. Ajmain Yasar Sahil',
+          stdId: 1605023,
+          type: 'Dean\'s List'
+        },
+        {
+          name: 'Md. Zawad Abdullah',
+          stdId: 1605002,
+          type: 'technical'
+        },
+        {
+          name: 'Md. Mahir Shahriyar Sezan',
+          stdId: 1605024,
+          type: 'Dean\'s List'
         },
       ],
       dialogOpen: false,
       registration: [
         { name: 'CSE463: Introduction to Bioinformatics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'Graphics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE409-Computer Graphics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE405-Computer Security', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'HUM475-Engineering Economics', credit: 3.00, offeredIn: 'L4-T1' },
       ]
     }
   }

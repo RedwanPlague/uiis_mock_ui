@@ -83,14 +83,14 @@ export default {
           file: null
         },
         {
-          course: 'Security',
-          session: '2018-19',
+          course: 'CSE409-Computer Graphics',
+          session: '8th April, 10:00 AM',
           type: 'Quiz (30 marks)',
           file: null
         },
         {
-          course: 'HPDS',
-          session: '2018-19',
+          course: 'CSE313:Operating System',
+          session: '8th April, 10:00 AM',
           type: 'Quiz (30 marks)',
           file: null
         },

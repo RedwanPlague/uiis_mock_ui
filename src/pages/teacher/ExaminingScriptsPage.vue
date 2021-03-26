@@ -101,8 +101,8 @@ export default {
   data () {
     return {
       courses: [
-        'CSE301: Graphics (CT 1)',
-        'CSE301: Security (Term Final)',
+        'CSE409: Computer Graphics (CT 1)',
+        'CSE405: Computer Security (Term Final)',
       ],
       marks: [null, null, null, null, null],
       isOpen1: false,
