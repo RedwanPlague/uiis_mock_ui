@@ -2,13 +2,50 @@
   <q-page padding>
     <div class="q-pa-md">
       <h4 style="margin-top: 0; margin-bottom: 0.5em">Routine</h4>
-      <q-table
-        :columns="routineColumns"
-        :data="routineData"
-        separator="cell"
-        hide-bottom
-        row-key="name"
-      />
+      <q-markup-table separator="cell">
+        <thead>
+        <tr>
+          <th style="font-size: 1.05em">Weekday</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+          <th style="font-size: 1.05em">8:00-9:00</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="text-align: center">
+          <td style="font-size: 1.05em">Sat</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>-</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+        </tr>
+        <tr style="text-align: center">
+          <td style="font-size: 1.05em">Sat</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>-</td>
+          <td colspan="3">CSE 321 <br/> Room 107</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr style="text-align: center">
+          <td style="font-size: 1.05em">Sat</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>-</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+          <td>CSE 321 <br/> Room 107</td>
+        </tr>
+        </tbody>
+      </q-markup-table>
       <h4 style="margin-bottom: 0.5em">My Courses</h4>
       <q-table
         :columns="courseColumns"
