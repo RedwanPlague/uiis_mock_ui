@@ -14,7 +14,7 @@
         color="white"
         text-color="blue"
         unelevated
-        :to="{ name: 'Teacher' }"
+        :to="{ name: 'Admin' }"
         label="Go Home"
         no-caps
       />

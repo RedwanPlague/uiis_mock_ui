@@ -57,6 +57,11 @@ export default {
       title: 'Courses',
       icon: 'school',
       link: { name: 'AdminCoursesPage' },
-    }
+    },
+    {
+      title: 'Notices',
+      icon: 'school',
+      link: { name: 'AdminNoticePage' },
+    },
   ]
 }

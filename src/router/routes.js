@@ -25,6 +25,7 @@ const routes = [
     children: [
       { path: '', name: 'Admin', component: () => import('pages/Index.vue') },
       { path: 'courses', name: 'AdminCoursesPage', component: () => import('pages/admin/CoursesPage.vue') },
+      { path: 'notice', name: 'AdminNoticePage', component: () => import('pages/admin/NoticePage.vue') },
       { path: 'student', name: 'AdminStudentPage', component: () => import('pages/common/StudentPage.vue') },
       { path: 'course', name: 'AdminCoursePage', component: () => import('pages/common/CoursePage.vue') },
     ]
