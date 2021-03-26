@@ -74,23 +74,38 @@ export default {
         'Student Id': 1605003,
         'Level/Term': 'Level-4 / Term-I',
         'Mobile No': '01521778899',
-        'E-mail Address': 'bishwa@jit.ac.bd',
-        'Contact Person': 'Dada, Brother, 01821253554',
+        'E-mail Address': 'bishwajit@buet.ac.bd',
+        'Contact Person': 'Avijit Bhattacharjee, Brother, 01821253554',
       },
-      currentCG: 4.00,
+      currentCG: 3.00,
       previousResult: [
         {
-          session: '2017-18',
+          session: '2018-19',
           courses: [
             {
-              name: 'Database',
+              name: 'CSE305-Computer Architecture',
               credit: 3.00,
-              grade: 4.00
+              grade: 3.00
             },
             {
-              name: 'Database',
+              name: 'CSE307-Software Engineering',
               credit: 3.00,
-              grade: 4.00
+              grade: 3.00
+            },
+            {
+              name: 'CSE309-Compiler',
+              credit: 3.00,
+              grade: 3.00
+            },
+            {
+              name: 'CSE311-Data Communication',
+              credit: 3.00,
+              grade: 3.00
+            },
+            {
+              name: 'CSE315-Micrprocessors, Microcontroller',
+              credit: 3.00,
+              grade: 3.00
             },
           ]
         },
@@ -98,12 +113,22 @@ export default {
           session: '2017-18',
           courses: [
             {
-              name: 'Database',
+              name: 'CSE207-Data Structure and Algorithms II',
               credit: 3.00,
-              grade: 4.00
+              grade: 3.00
             },
             {
-              name: 'Database',
+              name: 'CSE215-Database',
+              credit: 3.00,
+              grade: 3.00
+            },
+            {
+              name: 'MATH247-Linear Algebra, Laplace Transformation',
+              credit: 3.00,
+              grade: 3.00
+            },
+            {
+              name: 'EEE269-Electrical Devices and Instruments',
               credit: 3.00,
               grade: 3.00
             },
