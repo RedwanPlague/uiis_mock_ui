@@ -24,6 +24,9 @@ const routes = [
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', name: 'Admin', component: () => import('pages/Index.vue') },
+      { path: 'courses', name: 'AdminCoursesPage', component: () => import('pages/admin/CoursesPage.vue') },
+      { path: 'student', name: 'AdminStudentPage', component: () => import('pages/common/StudentPage.vue') },
+      { path: 'course', name: 'AdminCoursePage', component: () => import('pages/common/CoursePage.vue') },
     ]
   },
 

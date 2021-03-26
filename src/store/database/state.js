@@ -7,17 +7,17 @@ export default {
     },
     {
       title: 'Invigilation',
-      icon: 'school',
+      icon: 'bookmark',
       link: { name: 'TeacherInvigilationPage' }
     },
     {
       title: 'Question Setting',
-      icon: 'school',
+      icon: 'cached',
       link: { name: 'TeacherQuestionSettingPage' }
     },
     {
       title: 'Examining Scripts',
-      icon: 'school',
+      icon: 'code',
       link: { name: 'TeacherExaminingScriptsPage' }
     },
     {
@@ -52,4 +52,11 @@ export default {
     },
   ],
   user: 'Super Teacher',
+  adminLinks: [
+    {
+      title: 'Courses',
+      icon: 'school',
+      link: { name: 'AdminCoursesPage' },
+    }
+  ]
 }

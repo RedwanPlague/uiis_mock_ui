@@ -16,7 +16,7 @@
             <tbody>
             <tr v-for="i in 15" :key="i">
               <td class="text-left">
-                <a href="../../../public/script.pdf" download>
+                <a href="/files/script.pdf" download>
                   {{i+1605000}}
                 </a>
               </td>

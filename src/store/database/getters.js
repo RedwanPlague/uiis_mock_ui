@@ -18,3 +18,7 @@ export function sidebarLinks (state) {
 export function user (state) {
   return state.user
 }
+
+export function adminLinks (state) {
+  return state.adminLinks
+}

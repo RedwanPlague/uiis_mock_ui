@@ -1,97 +1,118 @@
 <template>
-  <q-layout view="hHh Lpr fFf"> <!-- Be sure to play with the Layout demo on docs -->
-
-    <!-- (Optional) The Header -->
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated >
       <q-toolbar>
         <q-btn
+          :disable="!user"
           flat
-          round
           dense
+          round
           icon="menu"
-          @click="leftDrawer = !leftDrawer"
+          aria-label="Menu"
+          @click="leftDrawerOpen = !leftDrawerOpen"
         />
-        <q-toolbar-title>
-          Header
-        </q-toolbar-title>
-      </q-toolbar>
 
-      <q-tabs>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
+        <q-toolbar-title>
+          Teachers' UIIS
+        </q-toolbar-title>
+
+        <q-btn-dropdown v-if="user" icon="person" :label="user" flat>
+          <q-list>
+            <q-item clickable v-close-popup :to="{ name: 'TeacherInvigilationPage' }" style="color: inherit">
+              <q-item-section>
+                <q-item-label>
+                  <q-avatar icon="school"></q-avatar>
+                  Account
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="setUser(null); $router.push({ name: 'Teacher' })">
+              <q-item-section>
+                <q-item-label>
+                  <q-avatar icon="school"></q-avatar>
+                  Logout
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <q-btn v-else flat :to="{ name: 'Teacher' }">SIGN IN</q-btn>
+      </q-toolbar>
     </q-header>
 
-    <!-- (Optional) The Footer -->
-    <q-footer>
-      <q-tabs switch-indicator>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
-
-      <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="menu"
-          @click="leftDrawer = !leftDrawer"
-        />
-        <q-toolbar-title>
-          Footer
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
-
-    <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
     <q-drawer
-      v-model="leftDrawer"
-      side="left"
+      v-if="user"
+      v-model="leftDrawerOpen"
+      show-if-above
       bordered
-      content-class="bg-grey-2"
+      content-class="bg-grey-1"
     >
-      <!-- QScrollArea is optional -->
-      <q-scroll-area class="fit q-pa-sm">
-        <!-- Content here -->
-      </q-scroll-area>
+      <q-list>
+        <q-item-label
+          header
+          class="text-grey-8"
+        >
+          Teachers' Options
+        </q-item-label>
+        <EssentialLink
+          v-for="link in adminLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
+    </q-drawer>
+
+    <q-drawer
+      side="right"
+      v-model="rightDrawerOpen"
+      bordered
+      content-class="bg-grey-1"
+    >
+      <q-list>
+        <q-item-label
+          header
+          class="text-grey-8"
+        >
+          Teachers' Options
+        </q-item-label>
+        <EssentialLink
+          v-for="link in adminLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
     </q-drawer>
 
     <q-page-container>
-      <!-- This is where pages get injected -->
       <router-view />
     </q-page-container>
-
   </q-layout>
 </template>
 
 <script>
-export default {
-  // name: 'LayoutName',
+import EssentialLink from 'components/EssentialLink.vue'
+import { mapGetters, mapActions } from 'vuex'
 
+export default {
+  name: 'MainLayout',
+  components: { EssentialLink },
   data () {
     return {
-      leftDrawer: true
+      leftDrawerOpen: false,
+      rightDrawerOpen: false
     }
+  },
+  computed: {
+    ...mapGetters([
+      'adminLinks',
+      'user'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'setUser'
+    ])
   }
 }
 </script>
