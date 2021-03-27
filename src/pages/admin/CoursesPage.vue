@@ -9,7 +9,8 @@
       align="justify"
       narrow-indicator
     >
-      <q-tab name="mails" label="Management" />
+      <q-tab name="mails" label="Creation" />
+      <q-tab name="alarms" label="View/Edit" />
       <q-tab name="movies" label="Assignment" />
     </q-tabs>
 
@@ -17,45 +18,44 @@
 
     <q-tab-panels v-model="tab" animated>
       <q-tab-panel name="mails">
-        <div class="row">
-          <div class="text-h4 col-6 q-mb-lg">Course Management</div>
-          <div class="col-6 text-right">
-            <q-btn icon="add" label="add course" unelevated @click="showAddCourse = !showAddCourse"></q-btn>
+        <q-form class="row">
+          <div class="col-12 text-h5 q-ma-sm">Course Creator</div>
+          <q-input class="col-6 q-pa-sm" value="" label="Title" outlined></q-input>
+          <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
+          <q-select class="col-6 q-pa-sm" v-model="dept" :options="departments" label="Department" outlined></q-select>
+          <q-input class="col-6 q-pa-sm" value="" label="Credit" type="Number" outlined></q-input>
+          <q-select class="col-6 q-pa-sm" value="" :options="intendedList" label="Intended For" outlined></q-select>
+          <q-select class="col-6 q-pa-sm" label="Prerequisites" outlined
+            v-model="prerequisites" use-chips multiple :options="preReqList"
+          ></q-select>
+          <q-input class="col-12 q-pa-sm" value="" label="Description" type="textarea" outlined></q-input>
+          <div class="col-12 q-pa-sm">
+            <q-btn label="Add" color="primary" unelevated></q-btn>
+            <q-btn label="Cancel" color="primary" flat></q-btn>
           </div>
-        </div>
-        <q-slide-transition>
-          <div v-if="showAddCourse">
-            <q-form class="row">
-              <div class="col-12 text-h5 q-ml-sm">Course Creator</div>
-              <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
-              <q-input class="col-6 q-pa-sm" value="" label="Dept" outlined></q-input>
-              <q-input class="col-6 q-pa-sm" value="" label="Credit" type="Number" outlined></q-input>
-              <q-select class="col-6 q-pa-sm" value="" :options="intendedList" label="Intended For" outlined></q-select>
-              <q-input class="col-6 q-pa-sm" value="" label="Prerequisite" outlined>
-                <template v-slot:append>
-                  <q-btn icon="add" flat dense></q-btn>
-                  <q-btn icon="keyboard_arrow_down" flat dense></q-btn>
-                </template>
-              </q-input>
-              <q-input class="col-12 q-pa-sm" value="" label="Description" type="textarea" outlined></q-input>
-              <div class="col-12 q-pa-sm">
-                <q-btn label="Add" color="primary" unelevated></q-btn>
-                <q-btn label="Cancel" color="primary" flat></q-btn>
-              </div>
-            </q-form>
-          </div>
-        </q-slide-transition>
-        <div class="row q-ma-md">
-          <div class="text-h5 col-6 q-pt-md text-left">Course List</div>
-          <div class="text-h5 col-4 q-mb-md" style="position: relative; right: 0"></div>
-          <div class="text-h5 col-2 q-mb-md" style="position: relative; right: 0">
-            <q-input value="" label="search">
-              <template v-slot:prepend>
-                <q-icon name="search" />
-              </template>
-            </q-input>
-          </div>
-          <q-markup-table class="col-12">
+        </q-form>
+      </q-tab-panel>
+      <q-tab-panel name="alarms">
+        <div>
+          <q-form class="row">
+            <div class="col-12 text-h5 q-ma-sm">Search Course</div>
+            <q-input class="col-4 q-pa-sm" v-model="parts.title" label="By Title"></q-input>
+            <q-input class="col-4 q-pa-sm" v-model="parts.name" label="By Name"></q-input>
+            <q-input class="col-4 q-pa-sm" value="" label="By Dept"></q-input>
+            <q-input class="col-2 q-pa-sm" v-model="parts.min" label="Credit Min" type="number" min="0.75" step="0.25"></q-input>
+            <q-input class="col-2 q-pa-sm" v-model="parts.max" label="Credit Max" type="number" min="0.75" step="0.25"></q-input>
+            <q-input class="col-3 q-pa-sm" value="" label="For"></q-input>
+            <q-select class="col-5 q-pa-sm" label="Prerequisites"
+              v-model="prerequisitesSearch" use-chips multiple :options="preReqList"
+            ></q-select>
+            <div class="col-12 q-pa-sm q-mt-md">
+              <q-btn label="Search" color="primary" icon="search" unelevated dense class="q-pr-sm"
+                @click="showCourses = !showCourses"
+              ></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
+          <q-markup-table class="col-12 q-mt-lg" flat v-if="showCourses">
             <thead>
             <tr>
               <th class="text-left" style="font-size: 1.2em;">Course</th>
@@ -83,7 +83,6 @@
             </tr>
             </tbody>
           </q-markup-table>
-          <q-btn class="q-mt-sm" label="Load More" color="primary" unelevated></q-btn>
         </div>
       </q-tab-panel>
       <q-tab-panel name="movies">
@@ -108,6 +107,13 @@ export default {
     return {
       tab: 'mails',
       showAddCourse: false,
+      dept: '',
+      departments: ['CSE', 'EEE', 'ME', 'CE', 'IPE', 'WRE', 'NAME', 'CHE'],
+      prerequisites: [],
+      prerequisitesSearch: [],
+      preReqList: [
+        'CSE 321', 'CSE 325', 'CSE 101', 'CSE 207', 'CSE 265'
+      ],
       intendedList: [
         'Level-1 / Term-I',
         'Level-1 / Term-II',
@@ -121,12 +127,6 @@ export default {
       courseList: [
         {course: 'CSE321: Computer Networks', credit: 3.00, intendedFor: 'L4-T1'},
         {course: 'CSE325: Information System Design', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE321: Computer Networks', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE321: Computer Neworks', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE325: Informatin System Design', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE321: Computer Networs', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE325: Information System Deign', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE325: Infrmation System Design', credit: 3.00, intendedFor: 'L3-T2'},
       ],
       courseAssign: '',
       teacher: '',
@@ -137,7 +137,14 @@ export default {
         'NBH: Nabil Bin Haan',
         'AB: Abdul Bai',
         'KD: Kadir Doya',
-      ]
+      ],
+      showCourses: false,
+      parts: {
+        title: '',
+        name: '',
+        min: '',
+        max: '',
+      }
     }
   },
   computed: {
