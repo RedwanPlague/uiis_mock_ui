@@ -53,11 +53,14 @@ export default {
   ],
   user: 'Super Teacher',
   adminLinks: [
+    { title: 'Accounts', icon: 'school', link: { name: 'AdminAccountPage' } },
     { title: 'Courses', icon: 'school', link: { name: 'AdminCoursesPage' } },
+    { title: 'Exams', icon: 'school', link: { name: 'AdminExamPage' } },
     { title: 'Scholarships', icon: 'school', link: { name: 'AdminScholarshipPage' } },
     { title: 'Dues', icon: 'school', link: { name: 'AdminDuesPage' } },
     { title: 'Notices', icon: 'school', link: { name: 'AdminNoticePage' } },
-    { title: 'Accounts', icon: 'school', link: { name: 'AdminAccountPage' } },
-    { title: 'Privileges', icon: 'school', link: { name: 'AdminPrivilegePage' } },
+    { title: 'Bus Routes', icon: 'school', link: { name: 'AdminBusRoutePage' } },
+    { title: 'Routines', icon: 'school', link: { name: 'AdminClassRoutinePage' } },
+    { title: 'Seat Plan', icon: 'school', link: { name: 'AdminSeatPlanPage' } },
   ]
 }

@@ -29,7 +29,10 @@ const routes = [
       { path: 'scholarships', name: 'AdminScholarshipPage', component: () => import('pages/admin/ScholarshipPage') },
       { path: 'dues', name: 'AdminDuesPage', component: () => import('pages/admin/DuePage') },
       { path: 'accounts', name: 'AdminAccountPage', component: () => import('pages/admin/AccountPage') },
-      { path: 'privileges', name: 'AdminPrivilegePage', component: () => import('pages/admin/PrivilegePage') },
+      { path: 'bus-routes', name: 'AdminBusRoutePage', component: () => import('pages/admin/BusRoutePage') },
+      { path: 'routines', name: 'AdminClassRoutinePage', component: () => import('pages/admin/ClassRoutinePage') },
+      { path: 'seat-plan', name: 'AdminSeatPlanPage', component: () => import('pages/admin/SeatPlanPage') },
+      { path: 'exams', name: 'AdminExamPage', component: () => import('pages/admin/ExamPage') },
       { path: 'student', name: 'AdminStudentPage', component: () => import('pages/common/StudentPage') },
       { path: 'course', name: 'AdminCoursePage', component: () => import('pages/common/CoursePage') },
     ]

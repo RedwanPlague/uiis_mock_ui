@@ -13,12 +13,12 @@
         />
 
         <q-toolbar-title>
-          Teachers' UIIS
+          Admins' UIIS
         </q-toolbar-title>
 
         <q-btn-dropdown v-if="user" icon="person" :label="user" flat>
           <q-list>
-            <q-item clickable v-close-popup :to="{ name: 'TeacherInvigilationPage' }" style="color: inherit">
+            <q-item clickable v-close-popup :to="{ name: 'AdminCoursesPage' }" style="color: inherit">
               <q-item-section>
                 <q-item-label>
                   <q-avatar icon="school"></q-avatar>
@@ -27,7 +27,7 @@
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-close-popup @click="setUser(null); $router.push({ name: 'Teacher' })">
+            <q-item clickable v-close-popup @click="setUser(null); $router.push({ name: 'Admin' })">
               <q-item-section>
                 <q-item-label>
                   <q-avatar icon="school"></q-avatar>
@@ -37,7 +37,7 @@
             </q-item>
           </q-list>
         </q-btn-dropdown>
-        <q-btn v-else flat :to="{ name: 'Teacher' }">SIGN IN</q-btn>
+        <q-btn v-else flat :to="{ name: 'Admin' }">SIGN IN</q-btn>
       </q-toolbar>
     </q-header>
 
@@ -53,28 +53,7 @@
           header
           class="text-grey-8"
         >
-          Teachers' Options
-        </q-item-label>
-        <EssentialLink
-          v-for="link in adminLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-drawer
-      side="right"
-      v-model="rightDrawerOpen"
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Teachers' Options
+          Admin's Options
         </q-item-label>
         <EssentialLink
           v-for="link in adminLinks"
@@ -100,7 +79,6 @@ export default {
   data () {
     return {
       leftDrawerOpen: false,
-      rightDrawerOpen: false
     }
   },
   computed: {

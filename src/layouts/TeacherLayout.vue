@@ -53,34 +53,13 @@
           header
           class="text-grey-8"
         >
-          Teachers' Options
+          Teacher's Options
         </q-item-label>
         <EssentialLink
           v-for="link in sidebarLinks"
           :key="link.title"
           v-bind="link"
          />
-      </q-list>
-    </q-drawer>
-
-    <q-drawer
-      side="right"
-      v-model="rightDrawerOpen"
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Teachers' Options
-        </q-item-label>
-        <EssentialLink
-          v-for="link in sidebarLinks"
-          :key="link.title"
-          v-bind="link"
-        />
       </q-list>
     </q-drawer>
 
@@ -100,7 +79,6 @@ export default {
   data () {
     return {
       leftDrawerOpen: false,
-      rightDrawerOpen: false
     }
   },
   computed: {
