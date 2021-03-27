@@ -76,12 +76,12 @@ export default {
         {
           name: 'Md. Redwanul Haque',
           stdId: 1605004,
-          type: 'Dean\'s List'
+          type: 'University Merit List'
         },
         {
           name: 'Md. Rakibul Hasan Sarkar',
           stdId: 1605010,
-          type: 'Technical'
+          type: 'University Merit List'
         },
         {
           name: 'Md. Ajmain Yasar Sahil',
@@ -91,7 +91,7 @@ export default {
         {
           name: 'Md. Zawad Abdullah',
           stdId: 1605002,
-          type: 'technical'
+          type: 'Technical'
         },
         {
           name: 'Md. Mahir Shahriyar Sezan',

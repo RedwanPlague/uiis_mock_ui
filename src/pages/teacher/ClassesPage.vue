@@ -128,16 +128,16 @@ export default {
         { name: 'session', label: 'Session', field: 'session', align: 'right', style: 'font-size: 1em' }
       ],
       courseData: [
-        { course: 'CSE-409:Computer Graphics', session: '2019-20' },
-        { course: 'CSE-325:Compiler', session: '2019-20' },
-        { course: 'CSE-301:Mathematical Analysis of Computer Science', session: '2018-19' },
-        { course: 'CSE-215:Database', session: '2018-19' },
-        { course: 'CSE-107:Object Oriented Programming', session: '2017-18' },
-        { course: 'CSE-108:Object Oriented Programming Sessional', session: '2017-18' },
-        { course: 'CSE-107:Object Oriented Programming', session: '2017-18' },
-        { course: 'CSE-107:Object Oriented Programming', session: '2016-17' },
-        { course: 'CSE-107:Object Oriented Programming', session: '2015-16' },
-        { course: 'CSE-107:Object Oriented Programming', session: '2015-16' },
+        { course: 'CSE409: Computer Graphics', session: '2019-20' },
+        { course: 'CSE325: Compiler', session: '2019-20' },
+        { course: 'CSE301: Mathematical Analysis of Computer Science', session: '2018-19' },
+        { course: 'CSE215: Database', session: '2018-19' },
+        { course: 'CSE107: Object Oriented Programming', session: '2017-18' },
+        { course: 'CSE108: Object Oriented Programming Sessional', session: '2017-18' },
+        { course: 'CSE107: Object Oriented Programming', session: '2017-18' },
+        { course: 'CSE107: Object Oriented Programming', session: '2016-17' },
+        { course: 'CSE107: Object Oriented Programming', session: '2015-16' },
+        { course: 'CSE107: Object Oriented Programming', session: '2015-16' },
       ]
     }
   }

@@ -83,13 +83,13 @@ export default {
           file: null
         },
         {
-          course: 'CSE409-Computer Graphics',
+          course: 'CSE409: Computer Graphics',
           session: '8th April, 10:00 AM',
           type: 'Quiz (30 marks)',
           file: null
         },
         {
-          course: 'CSE313:Operating System',
+          course: 'CSE313: Operating System',
           session: '8th April, 10:00 AM',
           type: 'Quiz (30 marks)',
           file: null

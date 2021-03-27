@@ -288,9 +288,9 @@ export default {
       dialogOpen2: false,
       registration: [
         { name: 'CSE463: Introduction to Bioinformatics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'CSE409-Computer Graphics', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'CSE405-Computer Security', credit: 3.00, offeredIn: 'L4-T1' },
-        { name: 'HUM475-Engineering Economics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE409: Computer Graphics', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'CSE405: Computer Security', credit: 3.00, offeredIn: 'L4-T1' },
+        { name: 'HUM475: Engineering Economics', credit: 3.00, offeredIn: 'L4-T1' },
       ],
       addDrops: [
         {

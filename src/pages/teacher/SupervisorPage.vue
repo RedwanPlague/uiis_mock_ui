@@ -65,7 +65,7 @@ export default {
         },
         {
           name: 'Md. Mahir Shahriyar Sezan',
-          stdId: 1605003
+          stdId: 1605024
         },
       ],
     }
