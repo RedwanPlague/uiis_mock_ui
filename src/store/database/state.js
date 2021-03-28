@@ -12,7 +12,7 @@ export default {
     },
     {
       title: 'Question Setting',
-      icon: 'cached',
+      icon: 'quiz',
       link: { name: 'TeacherQuestionSettingPage' }
     },
     {
