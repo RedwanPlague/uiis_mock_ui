@@ -2,7 +2,7 @@ export default {
   sidebarLinks: [
     {
       title: 'Classes',
-      icon: 'school',
+      icon: 'mdi-google-classroom',
       link: { name: 'TeacherClassesPage' }
     },
     {
@@ -17,22 +17,22 @@ export default {
     },
     {
       title: 'Examining Scripts',
-      icon: 'code',
+      icon: 'grading',
       link: { name: 'TeacherExaminingScriptsPage' }
     },
     {
       title: 'Scrutinizing Scripts',
-      icon: 'school',
+      icon: 'grading',
       link: { name: 'TeacherScrutinizingScriptsPage' }
     },
     {
       title: 'Supervisor\'s Corner',
-      icon: 'school',
+      icon: 'supervised_user_circle',
       link: { name: 'TeacherSupervisorPage' }
     },
     {
       title: 'Advisor\'s Corner',
-      icon: 'school',
+      icon: 'supervised_user_circle',
       link: { name: 'TeacherAdvisorPage' }
     },
     {
@@ -47,21 +47,21 @@ export default {
     },
     {
       title: 'Feedback',
-      icon: 'school',
+      icon: 'feedback',
       link: { name: 'TeacherFeedbackPage' }
     },
   ],
   user: 'Super Teacher',
   adminLinks: [
-    { title: 'Accounts', icon: 'school', link: { name: 'AdminAccountPage' } },
-    { title: 'Courses', icon: 'school', link: { name: 'AdminCoursesPage' } },
-    { title: 'Exams', icon: 'school', link: { name: 'AdminExamPage' } },
+    { title: 'Accounts', icon: 'mdi-account-multiple-plus', link: { name: 'AdminAccountPage' } },
+    { title: 'Courses', icon: 'mdi-book-open-variant', link: { name: 'AdminCoursesPage' } },
+    { title: 'Exams', icon: 'mdi-pencil-box-multiple', link: { name: 'AdminExamPage' } },
     { title: 'Scholarships', icon: 'school', link: { name: 'AdminScholarshipPage' } },
-    { title: 'Dues', icon: 'school', link: { name: 'AdminDuesPage' } },
-    { title: 'Notices', icon: 'school', link: { name: 'AdminNoticePage' } },
-    { title: 'Bus Routes', icon: 'school', link: { name: 'AdminBusRoutePage' } },
-    { title: 'Routines', icon: 'school', link: { name: 'AdminClassRoutinePage' } },
-    { title: 'Seat Plan', icon: 'school', link: { name: 'AdminSeatPlanPage' } },
-    { title: 'Miscellaneous', icon: 'school', link: { name: 'AdminMiscellaneousPage' } },
+    { title: 'Dues', icon: 'mdi-cash-multiple', link: { name: 'AdminDuesPage' } },
+    { title: 'Notices', icon: 'mdi-bulletin-board', link: { name: 'AdminNoticePage' } },
+    { title: 'Bus Routes', icon: 'mdi-bus-stop', link: { name: 'AdminBusRoutePage' } },
+    { title: 'Routines', icon: 'mdi-calendar-clock', link: { name: 'AdminClassRoutinePage' } },
+    { title: 'Seat Plan', icon: 'mdi-account-group-outline', link: { name: 'AdminSeatPlanPage' } },
+    { title: 'Miscellaneous', icon: 'miscellaneous_services', link: { name: 'AdminMiscellaneousPage' } },
   ]
 }
