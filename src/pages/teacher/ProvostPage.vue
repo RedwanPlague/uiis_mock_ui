@@ -84,7 +84,7 @@ export default {
           type: 'University Merit List'
         },
         {
-          name: 'Md. Ajmain Yasar Sahil',
+          name: 'Ajmain Yasar Ahmed',
           stdId: 1605023,
           type: 'Dean\'s List'
         },
@@ -94,7 +94,7 @@ export default {
           type: 'Technical'
         },
         {
-          name: 'Md. Mahir Shahriyar Sezan',
+          name: 'Md. Mahir Shahriyar',
           stdId: 1605024,
           type: 'Dean\'s List'
         },
