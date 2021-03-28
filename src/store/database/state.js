@@ -17,22 +17,22 @@ export default {
     },
     {
       title: 'Examining Scripts',
-      icon: 'code',
+      icon: 'grading',
       link: { name: 'TeacherExaminingScriptsPage' }
     },
     {
       title: 'Scrutinizing Scripts',
-      icon: 'mdi-code-tags-check',
+      icon: 'grading',
       link: { name: 'TeacherScrutinizingScriptsPage' }
     },
     {
       title: 'Supervisor\'s Corner',
-      icon: 'school',
+      icon: 'supervised_user_circle',
       link: { name: 'TeacherSupervisorPage' }
     },
     {
       title: 'Advisor\'s Corner',
-      icon: 'school',
+      icon: 'supervised_user_circle',
       link: { name: 'TeacherAdvisorPage' }
     },
     {
@@ -47,7 +47,7 @@ export default {
     },
     {
       title: 'Feedback',
-      icon: 'school',
+      icon: 'feedback',
       link: { name: 'TeacherFeedbackPage' }
     },
   ],
