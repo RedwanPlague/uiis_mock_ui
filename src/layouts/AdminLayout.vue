@@ -21,7 +21,7 @@
             <q-item clickable v-close-popup :to="{ name: 'AdminCoursesPage' }" style="color: inherit">
               <q-item-section>
                 <q-item-label>
-                  <q-avatar icon="school"></q-avatar>
+                  <q-avatar icon="account_circle"></q-avatar>
                   Account
                 </q-item-label>
               </q-item-section>
@@ -30,7 +30,7 @@
             <q-item clickable v-close-popup @click="setUser(null); $router.push({ name: 'Admin' })">
               <q-item-section>
                 <q-item-label>
-                  <q-avatar icon="school"></q-avatar>
+                  <q-avatar icon="logout"></q-avatar>
                   Logout
                 </q-item-label>
               </q-item-section>
