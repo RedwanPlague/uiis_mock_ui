@@ -22,11 +22,16 @@
           <div class="col-12 text-h5 q-ma-sm">Scholarship Creator</div>
           <!--          <q-input class="col-6 q-pa-sm" value="" label="Title" outlined></q-input>-->
           <q-input class="col-6 q-pa-sm q-mb-lg" v-model="ids" hint="* Separate by comma to use multiple" label="Student ID" outlined></q-input>
-          <q-select class="col-6 q-pa-sm q-mb-lg" value="" :options="scholarshipList" label="Type" outlined></q-select>
+          <q-select class="col-3 q-pa-sm q-mb-lg" value="" :options="scholarshipList" label="Type" outlined></q-select>
+          <q-input class="col-3 q-pa-sm q-mb-lg" v-model="newType" label="New Type" outlined>
+            <template v-slot:append>
+              <q-btn icon="add" flat @click="scholarshipList.push(newType); newType = ''"></q-btn>
+            </template>
+          </q-input>
           <!--          <q-select class="col-6 q-pa-sm" v-model="dept" :options="departments" label="Department" outlined></q-select>-->
-          <q-input class="col-6 q-pa-sm" value="" label="Amount" type="Number" outlined></q-input>
-          <q-input class="col-6 q-pa-sm" value="" label="Deduction" type="Number" outlined></q-input>
-          <q-select class="col-6 q-pa-sm" value="" :options="intendedList" label="Given For" outlined></q-select>
+          <q-input class="col-3 q-pa-sm" value="" label="Amount" type="Number" outlined></q-input>
+          <q-input class="col-3 q-pa-sm" value="" label="Deduction" type="Number" outlined></q-input>
+          <q-select class="col-3 q-pa-sm" value="" :options="intendedList" label="Given For" outlined></q-select>
 
 
           <div class="col-12 q-pa-sm">
@@ -71,10 +76,11 @@ export default {
       preReqList: [
         'CSE 321', 'CSE 325', 'CSE 101', 'CSE 207', 'CSE 265'
       ],
+      newType: '',
       scholarshipList: [
         'Board',
         'Technical',
-        'Merit List'
+        'University Merit',
       ],
       intendedList: [
         'Level-1 / Term-I',

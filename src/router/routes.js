@@ -4,7 +4,7 @@ const routes = [
     path: '/teacher',
     component: () => import('layouts/TeacherLayout'),
     children: [
-      { path: '', name: 'Teacher', component: () => import('pages/Index') },
+      { path: '', name: 'Teacher', component: () => import('pages/teacher/Index') },
       { path: 'classes', name: 'TeacherClassesPage', component: () => import('pages/teacher/ClassesPage') },
       { path: 'invigilation', name: 'TeacherInvigilationPage', component: () => import('pages/teacher/InvigilationPage') },
       { path: 'question-setting', name: 'TeacherQuestionSettingPage', component: () => import('pages/teacher/QuestionSettingPage') },
@@ -23,7 +23,7 @@ const routes = [
     path: '/admin',
     component: () => import('layouts/AdminLayout'),
     children: [
-      { path: '', name: 'Admin', component: () => import('pages/Index') },
+      { path: '', name: 'Admin', component: () => import('pages/admin/Index') },
       { path: 'courses', name: 'AdminCoursesPage', component: () => import('pages/admin/CoursesPage') },
       { path: 'notices', name: 'AdminNoticePage', component: () => import('pages/admin/NoticePage') },
       { path: 'scholarships', name: 'AdminScholarshipPage', component: () => import('pages/admin/ScholarshipPage') },

@@ -51,7 +51,7 @@ export default {
       link: { name: 'TeacherFeedbackPage' }
     },
   ],
-  user: 'Super Teacher',
+  user: null,
   adminLinks: [
     { title: 'Accounts', icon: 'mdi-account-multiple-plus', link: { name: 'AdminAccountPage' } },
     { title: 'Courses', icon: 'mdi-book-open-variant', link: { name: 'AdminCoursesPage' } },

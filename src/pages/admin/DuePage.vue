@@ -20,7 +20,7 @@
           <div class="col-12 text-h5 q-ma-sm">Due Creator</div>
           <q-input class="col-6 q-pa-sm q-mb-lg" value="" hint="* Separate by comma to use multiple" label="Student ID" outlined></q-input>
           <q-input class="col-6 q-pa-sm q-mb-lg" value="" label="Amount" type="Number" outlined></q-input>
-          <div class="q-pa-sm col-6">
+          <div class="q-pa-sm col-4">
             <q-input v-model="date" label="Deadline" outlined>
               <template v-slot:append>
                 <q-icon name="event" class="cursor-pointer">
@@ -35,7 +35,12 @@
               </template>
             </q-input>
           </div>
-          <q-select class="col-6 q-pa-sm" value="" :options="dueList" label="Type" outlined></q-select>
+          <q-select class="col-4 q-pa-sm" value="" :options="dueList" label="Type" outlined></q-select>
+          <q-input class="col-4 q-pa-sm q-mb-lg" v-model="newType" label="New Type" outlined>
+            <template v-slot:append>
+              <q-btn icon="add" flat @click="dueList.push(newType); newType = ''"></q-btn>
+            </template>
+          </q-input>
           <div class="col-12 q-pa-sm">
             <q-btn label="Add" color="primary" unelevated></q-btn>
             <q-btn label="Cancel" color="primary" flat></q-btn>
