@@ -89,6 +89,7 @@
         <div class="text-h4 q-ma-sm">Course Assignment</div>
         <q-form class="row q-mt-lg">
           <q-select class="col-6 q-pa-sm" v-model="courseAssign" :options="courseOptions" label="Course" outlined></q-select>
+          <q-input class="col-6 q-pa-sm" value="" label="Session" outlined></q-input>
           <q-select class="col-6 q-pa-sm" v-model="teacher" :options="teacherList" label="Teacher" outlined></q-select>
           <div class="col-12 q-pa-sm">
             <q-btn label="Assign" color="primary" unelevated></q-btn>

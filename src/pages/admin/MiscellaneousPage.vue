@@ -6,7 +6,7 @@
       <q-input class="col-6 q-pr-lg" label="Head" value="" outlined></q-input>
       <div class="col-12 q-pt-md">
         <q-btn label="Assign" color="primary" icon="done" unelevated dense class="q-pr-sm"></q-btn>
-        <q-btn label="Cancel" color="primary" flat></q-btn>
+        <q-btn label="Clear" color="primary" flat></q-btn>
       </div>
     </q-form>
     <br/><q-separator class="q-my-lg"/><br/>
@@ -16,7 +16,7 @@
       <q-input class="col-6 q-pr-lg" label="Provost" value="" outlined></q-input>
       <div class="col-12 q-pt-md">
         <q-btn label="Assign" color="primary" icon="done" unelevated dense class="q-pr-sm"></q-btn>
-        <q-btn label="Cancel" color="primary" flat></q-btn>
+        <q-btn label="Clear" color="primary" flat></q-btn>
       </div>
     </q-form>
     <br/><q-separator class="q-my-lg"/><br/>
@@ -26,7 +26,14 @@
       <q-input class="col-6 q-pr-lg" label="Supervisor" value="" outlined></q-input>
       <div class="col-12 q-pt-md">
         <q-btn label="Assign" color="primary" icon="done" unelevated dense class="q-pr-sm"></q-btn>
-        <q-btn label="Cancel" color="primary" flat></q-btn>
+        <q-btn label="Clear" color="primary" flat></q-btn>
+      </div>
+    </q-form>
+    <br/><q-separator class="q-my-lg"/><br/>
+    <q-form class="q-ma-md row">
+      <div class="col-12 text-h5 q-mb-md">* Results are ready</div>
+      <div class="col-12 q-pt-md">
+        <q-btn label="Publish" color="primary" icon="publish" unelevated dense class="q-pr-sm"></q-btn>
       </div>
     </q-form>
     <br/><br/><br/>
