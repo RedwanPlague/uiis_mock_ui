@@ -32,6 +32,7 @@ const routes = [
       { path: 'bus-routes', name: 'AdminBusRoutePage', component: () => import('pages/admin/BusRoutePage') },
       { path: 'routines', name: 'AdminClassRoutinePage', component: () => import('pages/admin/ClassRoutinePage') },
       { path: 'seat-plan', name: 'AdminSeatPlanPage', component: () => import('pages/admin/SeatPlanPage') },
+      { path: 'miscellaneous', name: 'AdminMiscellaneousPage', component: () => import('pages/admin/MiscellaneousPage') },
       { path: 'exams', name: 'AdminExamPage', component: () => import('pages/admin/ExamPage') },
       { path: 'student', name: 'AdminStudentPage', component: () => import('pages/common/StudentPage') },
       { path: 'course', name: 'AdminCoursePage', component: () => import('pages/common/CoursePage') },

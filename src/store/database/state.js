@@ -62,5 +62,6 @@ export default {
     { title: 'Bus Routes', icon: 'school', link: { name: 'AdminBusRoutePage' } },
     { title: 'Routines', icon: 'school', link: { name: 'AdminClassRoutinePage' } },
     { title: 'Seat Plan', icon: 'school', link: { name: 'AdminSeatPlanPage' } },
+    { title: 'Miscellaneous', icon: 'school', link: { name: 'AdminMiscellaneousPage' } },
   ]
 }

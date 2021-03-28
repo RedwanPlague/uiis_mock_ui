@@ -1,132 +1,204 @@
 <template>
-  <q-page padding>
-    <div class="row">
-      <div class="text-h4 col-6 q-pa-md">Account Management</div>
-      <div class="col-6 q-pa-md text-right">
-        <q-btn-dropdown icon="add" label="Create Account" flat>
-          <q-list class="text-center">
-            <q-item clickable v-close-popup @click="whichType = 1; password = ''">
-              <q-item-section><q-item-label>Student Account</q-item-label></q-item-section>
-            </q-item>
-            <q-item clickable v-close-popup @click="whichType = 2; password = ''">
-              <q-item-section><q-item-label>Teacher Account</q-item-label></q-item-section>
-            </q-item>
-            <q-item clickable v-close-popup @click="whichType = 3; password = ''">
-              <q-item-section><q-item-label>Staff Account</q-item-label></q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
-      </div>
-    </div>
-    <div v-if="whichType === 1">
-      <q-form class="row q-ma-sm">
-        <div class="col-12 text-h5 q-ml-sm">Student Creator</div>
-        <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Student Id" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Dept" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Hall" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" v-model="password" label="Password" outlined>
-          <template v-slot:append>
-            <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
-          </template>
-        </q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Privileges" outlined>
-          <template v-slot:append>
-            <q-btn icon="add" flat dense></q-btn>
-            <q-btn icon="keyboard_arrow_down" flat dense></q-btn>
-          </template>
-        </q-input>
-        <div class="col-12 q-pa-sm">
-          <q-btn label="Create" color="primary" unelevated></q-btn>
-          <q-btn label="Cancel" color="primary" flat @click="whichType = 0"></q-btn>
+  <q-page padding><q-tabs
+    v-model="tab"
+    dense
+    class="text-grey"
+    active-color="primary"
+    indicator-color="primary"
+    align="justify"
+    narrow-indicator
+  >
+    <q-tab name="mails" label="Creation" />
+    <q-tab name="alarms" label="View/Edit" />
+  </q-tabs>
+
+    <q-separator/>
+
+    <q-tab-panels v-model="tab" animated>
+      <q-tab-panel name="mails">
+        <div class="row">
+          <div class="text-h5 q-pa-md">
+            Create
+            <q-select class="text-h5 q-mx-md" v-model="whichType" style="display: inline-block" :options="['Student', 'Teacher', 'Admin']"></q-select>
+            Account
+          </div>
         </div>
-      </q-form>
-    </div>
-    <div v-else-if="whichType === 2">
-      <q-form class="row q-ma-sm">
-        <div class="col-12 text-h5 q-ml-sm">Teacher Creator</div>
-        <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Dept" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Teacher Id" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" v-model="password" label="Password" outlined>
-          <template v-slot:append>
-            <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
-          </template>
-        </q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Privileges" outlined>
-          <template v-slot:append>
-            <q-btn icon="add" flat dense></q-btn>
-            <q-btn icon="keyboard_arrow_down" flat dense></q-btn>
-          </template>
-        </q-input>
-        <div class="col-12 q-pa-sm">
-          <q-btn label="Create" color="primary" unelevated></q-btn>
-          <q-btn label="Cancel" color="primary" flat @click="whichType = 0"></q-btn>
+        <div v-if="whichType === 'Student'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
+            <q-input class="col-6 q-pa-sm" value="" label="Student Id" outlined></q-input>
+            <q-select class="col-6 q-pa-sm" v-model="dept" :options="departments" label="Department" outlined></q-select>
+            <q-select class="col-6 q-pa-sm" v-model="hall" :options="halls" label="Hall" outlined></q-select>
+            <q-input class="col-6 q-pa-sm" value="" label="Advisor" outlined></q-input>
+            <q-input class="col-6 q-pa-sm" v-model="password" label="Password" outlined>
+              <template v-slot:append>
+                <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
+              </template>
+            </q-input>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Create Student" color="primary" unelevated></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
         </div>
-      </q-form>
-    </div>
-    <div v-else-if="whichType === 3">
-      <q-form class="row q-ma-sm">
-        <div class="col-12 text-h5 q-ml-sm">Staff Creator</div>
-        <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Staff Id" outlined></q-input>
-        <q-input class="col-6 q-pa-sm" v-model="password" label="Password" outlined>
-          <template v-slot:append>
-            <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
-          </template>
-        </q-input>
-        <q-input class="col-6 q-pa-sm" value="" label="Privileges" outlined>
-          <template v-slot:append>
-            <q-btn icon="add" flat dense></q-btn>
-            <q-btn icon="keyboard_arrow_down" flat dense></q-btn>
-          </template>
-        </q-input>
-        <div class="col-12 q-pa-sm">
-          <q-btn label="Create" color="primary" unelevated></q-btn>
-          <q-btn label="Cancel" color="primary" flat @click="whichType = 0"></q-btn>
+        <div v-else-if="whichType === 'Teacher'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
+            <q-input class="col-6 q-pa-sm" value="" label="Teacher Id" outlined></q-input>
+            <q-select class="col-6 q-pa-sm" v-model="dept" :options="departments" label="Department" outlined></q-select>
+            <q-input class="col-6 q-pa-sm" value="" label="Password" outlined>
+              <template v-slot:append>
+                <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
+              </template>
+            </q-input>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Create Teacher" color="primary" unelevated></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
         </div>
-      </q-form>
-    </div>
-    <div class="row q-ma-md">
-      <div class="text-h5 col-6 q-pt-md text-left">Student List</div>
-      <div class="text-h5 col-4 q-mb-md" style="position: relative; right: 0"></div>
-      <div class="text-h5 col-2 q-mb-md" style="position: relative; right: 0">
-        <q-input value="" label="search">
-          <template v-slot:prepend>
-            <q-icon name="search" />
-          </template>
-        </q-input>
-      </div>
-      <q-markup-table class="col-12">
+        <div v-else-if="whichType === 'Admin'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-6 q-pa-sm" value="" label="Name" outlined></q-input>
+            <q-input class="col-6 q-pa-sm" value="" label="Admin Id" outlined></q-input>
+            <q-input class="col-6 q-pa-sm" value="" label="Password" outlined>
+              <template v-slot:append>
+                <q-btn label="generate" flat dense color="primary" @click="password = 'H8rF45&ggTiG'"></q-btn>
+              </template>
+            </q-input>
+            <div class="col-6"></div>
+            <q-select class="col-12 q-pa-sm" label="Privileges" outlined
+                      v-model="privilege" use-chips multiple :options="privilegeList" clearable
+            ></q-select>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Create Admin" color="primary" unelevated></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
+        </div>
+      </q-tab-panel>
+      <q-tab-panel name="alarms">
+        <div class="row">
+          <div class="text-h5 q-pa-md">
+            Search
+            <q-select class="text-h5 q-mx-md" v-model="whichType" style="display: inline-block" :options="['Student', 'Teacher', 'Admin']"></q-select>
+            Account
+          </div>
+        </div>
+        <div v-if="whichType === 'Student'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-3 q-pa-sm" value="" label="Name"></q-input>
+            <q-input class="col-3 q-pa-sm" value="" label="Student Id"></q-input>
+            <q-select class="col-3 q-pa-sm" v-model="dept" :options="departments" label="Department"></q-select>
+            <q-select class="col-3 q-pa-sm" v-model="hall" :options="halls" label="Hall"></q-select>
+            <q-input class="col-4 q-pa-sm" value="" label="Advisor"></q-input>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Search Student" color="primary" unelevated @click="showCourses = !showCourses"></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
+        </div>
+        <div v-else-if="whichType === 'Teacher'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-4 q-pa-sm" value="" label="Name"></q-input>
+            <q-input class="col-4 q-pa-sm" value="" label="Teacher Id"></q-input>
+            <q-select class="col-4 q-pa-sm" v-model="dept" :options="departments" label="Department"></q-select>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Search Teacher" color="primary" unelevated></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
+        </div>
+        <div v-else-if="whichType === 'Admin'">
+          <q-form class="row q-ma-sm">
+            <q-input class="col-4 q-pa-sm" value="" label="Name"></q-input>
+            <q-input class="col-3 q-pa-sm" value="" label="Admin Id"></q-input>
+            <div class="col-6"></div>
+            <q-select class="col-12 q-pa-sm" label="Privileges"
+                      :value="[]" use-chips multiple :options="privilegeList" clearable
+            ></q-select>
+            <div class="col-12 q-pa-sm">
+              <q-btn label="Search Admin" color="primary" unelevated @click="showAdmins = !showAdmins"></q-btn>
+              <q-btn label="Cancel" color="primary" flat></q-btn>
+            </div>
+          </q-form>
+        </div>
+        <q-markup-table class="col-12 q-mt-lg" flat v-if="showCourses && whichType === 'Student'">
+          <thead>
+          <tr>
+            <th class="text-left" style="font-size: 1.2em;">Student</th>
+            <th style="font-size: 1.2em">{{newComing ? 'New Password' : ''}}</th>
+            <th style="font-size: 1.2em; width: 10%">Level/Term</th>
+            <th style="font-size: 1.2em; width: 10%" class="text-right"><span class="q-pr-md">Recover</span></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(course, i) in courseList" :key="i" class="text-center">
+            <td class="text-left" style="font-size: 1.1em">
+              <router-link :to="{ name: 'AdminStudentPage' }" style="text-decoration: none; color: black">
+                {{course.id}} - {{course.name}}
+              </router-link>
+            </td>
+            <td style="font-size: 1.2em">
+              <q-spinner v-if="course.newPassword === 'loading'" color="primary" size="md"/>
+              <span v-else>{{course.newPassword}}</span>
+            </td>
+            <td style="font-size: 1.1em">{{course.lt}}</td>
+            <td class="text-center text-bold" style="font-size: 1.1em">
+              <q-btn
+                flat
+                icon="vpn_key"
+                @click="setPassword(course)"
+              ></q-btn>
+            </td>
+          </tr>
+          </tbody>
+        </q-markup-table>
+        <q-markup-table class="col-12 q-mt-lg" flat v-if="showAdmins && whichType === 'Admin'">
         <thead>
         <tr>
-          <th class="text-left" style="font-size: 1.2em;">Course</th>
-          <th style="font-size: 1.2em; width: 10%">Credit</th>
-          <th style="font-size: 1.2em; width: 15%">Intended For</th>
+          <th class="text-left" style="font-size: 1.2em; width: 15%">Admin Id</th>
+          <th style="font-size: 1.2em;" class="text-left">Name</th>
+          <th style="font-size: 1.2em; width: 10%"></th>
           <th style="font-size: 1.2em; width: 10%" class="text-right"><span class="q-pr-md">Edit</span></th>
+          <th style="font-size: 1.2em; width: 10%" class="text-right"><span class="q-pr-md">Recover</span></th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(course, i) in courseList" :key="i" class="text-center">
-          <td class="text-left" style="font-size: 1.1em">
-            <router-link :to="{ name: 'AdminCoursePage' }" style="text-decoration: none; color: black">
-              {{course.course}}
-            </router-link>
-          </td>
-          <td style="font-size: 1.1em">{{course.credit.toFixed(2)}}</td>
-          <td style="font-size: 1.1em">{{course.intendedFor}}</td>
-          <td class="text-right">
-            <q-btn
-              flat
-              icon="edit"
-              @click="showEditCourse = !showEditCourse"
-            ></q-btn>
-          </td>
-        </tr>
+          <tr>
+            <td class="text-left" style="font-size: 1.1em">Ad-108</td>
+            <td class="text-left" style="font-size: 1.1em">Abu Bakar</td>
+            <td style="font-size: 1.2em"></td>
+            <td class="text-right text-bold" style="font-size: 1.1em">
+              <q-btn
+                flat
+                icon="edit"
+                @click="showAdminEdit = true"
+              ></q-btn>
+            </td>
+            <td class="text-left text-bold" style="font-size: 1.1em">
+              <q-btn flat icon="vpn_key"></q-btn>
+            </td>
+          </tr>
+          <tr v-if="showAdminEdit">
+            <td colspan="5">
+              <q-select
+                v-model="curPrivileges"
+                :options="privilegeList"
+                label="Privileges"
+                use-chips
+                multiple
+              >
+                <template v-slot:append>
+                  <q-btn label="save" color="green" @click="showAdminEdit = false"></q-btn>
+                </template>
+              </q-select>
+            </td>
+          </tr>
         </tbody>
       </q-markup-table>
-      <q-btn class="q-mt-sm" label="Load More" color="primary" unelevated></q-btn>
-    </div>
+      </q-tab-panel>
+    </q-tab-panels>
   </q-page>
 </template>
 
@@ -136,8 +208,34 @@ export default {
   data () {
     return {
       tab: 'mails',
-      whichType: 0,
+      dept: '',
+      departments: ['CSE', 'EEE', 'ME', 'CE', 'IPE', 'WRE', 'NAME', 'CHE'],
+      hall: '',
+      halls: ['AH', 'SWH', 'RH'],
+      whichType: 'Student',
       password: '',
+      privilege: [],
+      privilegeList: [
+        'Account Create',
+        'Account Edit',
+        'Account View',
+        'Privilege Grant',
+        'Privilege Remove',
+        'Course Create',
+        'Course Edit',
+        'Course View',
+        'Scholarship Create',
+        'Scholarship Edit',
+        'Scholarship View',
+        'Due Create',
+        'Due Edit',
+        'Due View',
+      ],
+      curPrivileges: [
+        'Account Edit',
+        'Account View',
+        'Course View',
+      ],
       intendedList: [
         'Level-1 / Term-I',
         'Level-1 / Term-II',
@@ -149,15 +247,12 @@ export default {
         'Level-4 / Term-II',
       ],
       courseList: [
-        {course: 'CSE321: Computer Networks', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE325: Information System Design', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE321: Computer Networks', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE321: Computer Neworks', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE325: Informatin System Design', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE321: Computer Networs', credit: 3.00, intendedFor: 'L4-T1'},
-        {course: 'CSE325: Information System Deign', credit: 3.00, intendedFor: 'L3-T2'},
-        {course: 'CSE325: Infrmation System Design', credit: 3.00, intendedFor: 'L3-T2'},
+        { id: '1605001', name: 'Ashraful Islam', newPassword: '', lt: 'L4-T1' },
+        { id: '1705002', name: 'Zawad Abdullah', newPassword: '', lt: 'L3-T1' },
+        { id: '1805003', name: 'Bishwajit Bhattacharjee', newPassword: '', lt: 'L2-T1' },
       ],
+      showCourses: false,
+      showEditCourse: false,
       courseAssign: '',
       teacher: '',
       teacherList: [
@@ -167,7 +262,10 @@ export default {
         'NBH: Nabil Bin Haan',
         'AB: Abdul Bai',
         'KD: Kadir Doya',
-      ]
+      ],
+      newComing: false,
+      showAdmins: false,
+      showAdminEdit: false,
     }
   },
   computed: {
@@ -177,6 +275,15 @@ export default {
         options.push(course.course)
       }
       return options
+    }
+  },
+  methods: {
+    setPassword (course) {
+      course.newPassword = 'loading'
+      this.newComing = true
+      setInterval(() => {
+        course.newPassword = 't6uzTDs%%5Er'
+      }, 1000)
     }
   }
 }

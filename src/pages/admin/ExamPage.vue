@@ -1,11 +1,11 @@
 <template>
   <q-page padding>
-    <!-- content -->
+    <!--content-->
   </q-page>
 </template>
 
 <script>
 export default {
-  // name: 'PageName',
+  name: 'ExamPage',
 }
 </script>
