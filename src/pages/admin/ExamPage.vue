@@ -4,7 +4,7 @@
       <div class="col-12 text-h5 q-ma-sm">Schedule Exam</div>
       <q-input class="col-6 q-pa-sm" value="" label="Course" outlined></q-input>
       <q-input class="col-6 q-pa-sm" value="" label="Session" outlined></q-input>
-      <q-input class="q-pa-sm col-4" v-model="date" label="Date" outlined>
+      <q-input class="q-pa-sm col-6" v-model="date" label="Date" outlined>
         <template v-slot:append>
           <q-icon name="event" class="cursor-pointer">
             <q-popup-proxy transition-show="scale" transition-hide="scale">
@@ -17,7 +17,7 @@
           </q-icon>
         </template>
       </q-input>
-      <q-input class="q-pa-sm col-4" v-model="time" label="Time" outlined>
+      <q-input class="q-pa-sm col-6" v-model="time" label="Time" outlined>
         <template v-slot:append>
           <q-icon name="access_time" class="cursor-pointer">
             <q-popup-proxy transition-show="scale" transition-hide="scale">
