@@ -21,12 +21,12 @@
         <q-form class="row">
           <div class="col-12 text-h5 q-ma-sm">Scholarship Creator</div>
           <!--          <q-input class="col-6 q-pa-sm" value="" label="Title" outlined></q-input>-->
-          <q-input class="col-6 q-pa-sm" value="" label="Student ID" outlined></q-input>
-          <q-select class="col-6 q-pa-sm" value="" :options="scholarshipList" label="Type" outlined></q-select>
+          <q-input class="col-6 q-pa-sm q-mb-lg" v-model="ids" hint="* Separate by comma to use multiple" label="Student ID" outlined></q-input>
+          <q-select class="col-6 q-pa-sm q-mb-lg" value="" :options="scholarshipList" label="Type" outlined></q-select>
           <!--          <q-select class="col-6 q-pa-sm" v-model="dept" :options="departments" label="Department" outlined></q-select>-->
           <q-input class="col-6 q-pa-sm" value="" label="Amount" type="Number" outlined></q-input>
           <q-input class="col-6 q-pa-sm" value="" label="Deduction" type="Number" outlined></q-input>
-          <q-select class="col-6 q-pa-sm" value="" :options="intendedList" label="Intended For" outlined></q-select>
+          <q-select class="col-6 q-pa-sm" value="" :options="intendedList" label="Given For" outlined></q-select>
 
 
           <div class="col-12 q-pa-sm">
@@ -48,34 +48,6 @@
               <q-btn label="Cancel" color="primary" flat></q-btn>
             </div>
           </q-form>
-          <q-markup-table class="col-12 q-mt-lg" flat v-if="showCourses">
-            <thead>
-            <tr>
-              <th class="text-left" style="font-size: 1.2em;">Course</th>
-              <th style="font-size: 1.2em; width: 10%">Credit</th>
-              <th style="font-size: 1.2em; width: 15%">Intended For</th>
-              <th style="font-size: 1.2em; width: 10%" class="text-right"><span class="q-pr-md">Edit</span></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(course, i) in courseList" :key="i" class="text-center">
-              <td class="text-left" style="font-size: 1.1em">
-                <router-link :to="{ name: 'AdminCoursePage' }" style="text-decoration: none; color: black">
-                  {{course.course}}
-                </router-link>
-              </td>
-              <td style="font-size: 1.1em">{{course.credit.toFixed(2)}}</td>
-              <td style="font-size: 1.1em">{{course.intendedFor}}</td>
-              <td class="text-right">
-                <q-btn
-                  flat
-                  icon="edit"
-                  @click="showEditCourse = !showEditCourse"
-                ></q-btn>
-              </td>
-            </tr>
-            </tbody>
-          </q-markup-table>
         </div>
       </q-tab-panel>
 
@@ -89,6 +61,7 @@ export default {
   data () {
     return {
       tab: 'mails',
+      ids: [],
       showAddCourse: false,
       date: null,
       dept: '',
