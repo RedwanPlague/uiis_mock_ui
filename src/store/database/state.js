@@ -32,17 +32,17 @@ export default {
     },
     {
       title: 'Advisor\'s Corner',
-      icon: 'supervised_user_circle',
+      icon: 'mdi-eye-outline',
       link: { name: 'TeacherAdvisorPage' }
     },
     {
       title: 'Head of Dept Corner',
-      icon: 'school',
+      icon: 'mdi-account-tie',
       link: { name: 'TeacherHeadOfDeptPage' }
     },
     {
       title: 'Provost Corner',
-      icon: 'school',
+      icon: 'gite',
       link: { name: 'TeacherProvostPage' }
     },
     {
