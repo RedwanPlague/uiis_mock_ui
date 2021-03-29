@@ -56,8 +56,6 @@ export default {
         'AB: Abdul Bai',
         'KD: Kadir Doya',
         'TM: Tauqir Mahim',
-        'ZW: Zahin Wahab',
-        'MM: Mahim Mahbub',
       ],
       invigilator: [],
     }

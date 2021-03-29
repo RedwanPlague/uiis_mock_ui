@@ -25,7 +25,7 @@
           </div>
         </q-card>
       </router-link>
-      <q-input value="" label="clear" class="col-6 q-mt-md">
+      <q-input value="" label="Student Id" class="col-6 q-mt-md">
         <template v-slot:prepend>
           <q-icon name="check" />
         </template>

@@ -26,7 +26,7 @@ export default {
       link: { name: 'TeacherScrutinizingScriptsPage' }
     },
     {
-      title: 'Supervisor\'s Corner',
+      title: 'Thesis Supervisor\'s Corner',
       icon: 'supervised_user_circle',
       link: { name: 'TeacherSupervisorPage' }
     },

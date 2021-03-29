@@ -21,9 +21,9 @@
     </q-form>
     <br/><q-separator class="q-my-lg"/><br/>
     <q-form class="q-ma-md row">
-      <div class="col-12 text-h5 q-mb-md">Supervisor Assignment</div>
+      <div class="col-12 text-h5 q-mb-md">Thesis Supervisor Assignment</div>
       <q-input class="col-6 q-pr-lg" label="Student Id" value="" outlined></q-input>
-      <q-input class="col-6 q-pr-lg" label="Supervisor" value="" outlined></q-input>
+      <q-input class="col-6 q-pr-lg" label="Thesis Supervisor" value="" outlined></q-input>
       <div class="col-12 q-pt-md">
         <q-btn label="Assign" color="primary" icon="done" unelevated dense class="q-pr-sm"></q-btn>
         <q-btn label="Clear" color="primary" flat></q-btn>

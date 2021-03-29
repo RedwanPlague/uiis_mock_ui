@@ -1,5 +1,6 @@
 <template>
-  <q-page padding><q-tabs
+  <q-page padding>
+    <q-tabs
     v-model="tab"
     dense
     class="text-grey"
@@ -115,7 +116,7 @@
             <q-input class="col-3 q-pa-sm" value="" label="Admin Id"></q-input>
             <div class="col-6"></div>
             <q-select class="col-12 q-pa-sm" label="Privileges"
-                      :value="[]" use-chips multiple :options="privilegeList" clearable
+                      v-model="againPrivilege" use-chips multiple :options="privilegeList" clearable
             ></q-select>
             <div class="col-12 q-pa-sm">
               <q-btn label="Search Admin" color="primary" unelevated @click="showAdmins = !showAdmins"></q-btn>
@@ -214,6 +215,7 @@ export default {
       halls: ['AH', 'SWH', 'RH'],
       whichType: 'Student',
       password: '',
+      againPrivilege: [],
       privilege: [],
       privilegeList: [
         'Account Create',

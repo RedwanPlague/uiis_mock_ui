@@ -18,8 +18,9 @@
       <q-tab-panel name="mails">
         <q-form class="row">
           <div class="col-12 text-h5 q-ma-sm">Due Creator</div>
-          <q-input class="col-6 q-pa-sm q-mb-lg" value="" hint="* Separate by comma to use multiple" label="Student ID" outlined></q-input>
-          <q-input class="col-6 q-pa-sm q-mb-lg" value="" label="Amount" type="Number" outlined></q-input>
+          <q-input class="col-4 q-pa-sm q-mb-lg" value="" hint="* Separate by comma to use multiple" label="Student ID" outlined></q-input>
+          <q-input class="col-4 q-pa-sm q-mb-lg" value="" label="Amount" type="Number" outlined></q-input>
+          <q-input class="col-4 q-pa-sm q-mb-lg" value="" label="Fine" type="Number" outlined></q-input>
           <div class="q-pa-sm col-4">
             <q-input v-model="date" label="Deadline" outlined>
               <template v-slot:append>
@@ -36,7 +37,8 @@
             </q-input>
           </div>
           <q-select class="col-4 q-pa-sm" value="" :options="dueList" label="Type" outlined></q-select>
-          <q-input class="col-4 q-pa-sm q-mb-lg" v-model="newType" label="New Type" outlined>
+          <div class="col-1"></div>
+          <q-input class="col-3 q-pa-sm q-mb-lg" v-model="newType" label="New Type" outlined>
             <template v-slot:append>
               <q-btn icon="add" flat @click="dueList.push(newType); newType = ''"></q-btn>
             </template>
