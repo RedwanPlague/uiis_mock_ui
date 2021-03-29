@@ -56,7 +56,7 @@ export default {
           stdId: 1605010
         },
         {
-          name: 'Md. Ajmain Yasar Sahil',
+          name: 'Ajmain Yasar Ahmed',
           stdId: 1605023
         },
         {
@@ -64,7 +64,7 @@ export default {
           stdId: 1605002
         },
         {
-          name: 'Md. Mahir Shahriyar Sezan',
+          name: 'Md. Mahir Shahriyar',
           stdId: 1605024
         },
       ],
