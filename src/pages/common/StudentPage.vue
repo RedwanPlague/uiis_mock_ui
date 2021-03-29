@@ -34,7 +34,7 @@
           <q-markup-table flat>
             <thead>
             <tr>
-              <th style="font-size: 1.1em" class="text-left">Course</th>
+              <th style="font-size: 1.1em; width: 70%" class="text-left">Course</th>
               <th style="font-size: 1.1em">Credit</th>
               <th style="font-size: 1.1em">Grade</th>
             </tr>

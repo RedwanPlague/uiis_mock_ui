@@ -9,8 +9,8 @@
       align="justify"
       narrow-indicator
     >
-      <q-tab name="mails" label="Scholarships" />
       <q-tab name="movies" label="Registrations" />
+      <q-tab name="mails" label="Scholarships" />
       <q-tab name="alarms" label="Term Results" />
     </q-tabs>
 
@@ -180,7 +180,7 @@ export default {
   name: 'AdvisorPage',
   data () {
     return {
-      tab: 'mails',
+      tab: 'movies',
       filterSelected: null,
       filterOptions: ['cg', 'age', 'regular'],
       advisees: [
@@ -228,12 +228,12 @@ export default {
         {
           name: 'Md. Redwanul Haque',
           stdId: 1605004,
-          type: 'University Merit List'
+          type: 'University Merit'
         },
         {
           name: 'Md. Rakibul Hasan Sarkar',
           stdId: 1605010,
-          type: 'University Merit List'
+          type: 'University Merit'
         },
         {
           name: 'Md. Ajmain Yasar Sahil',
